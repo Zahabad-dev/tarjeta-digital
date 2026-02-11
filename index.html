@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Digital - Missael López Lira</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <div class="profile-img">
+                    <img src="logo.png" alt="Logo Missael López Lira" class="logo">
+                </div>
+                <h1 class="name">L.C.E Missael López Lira</h1>
+                <p class="title">Licenciado en Comercio Exterior</p>
+            </div>
+            
+            <div class="card-body">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:missaellopezlira75@gmail.com">missaellopezlira75@gmail.com</a>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+524421154412">442-115-4412</a>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>C. Jose Maria Ochoa 423, Col Los Candiles<br>76190. Corregidora, QRO.</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-footer">
+                <button class="btn" onclick="saveContact()">
+                    <i class="fas fa-address-card"></i>
+                    Guardar Contacto
+                </button>
+                <button class="btn btn-share" onclick="shareCard()">
+                    <i class="fas fa-share-alt"></i>
+                    Compartir
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
