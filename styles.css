@@ -94,6 +94,15 @@ body {
     font-weight: 300;
 }
 
+.subtitle {
+    font-size: 15px;
+    margin-top: 8px;
+    font-weight: 500;
+    color: white;
+    opacity: 0.95;
+    letter-spacing: 0.5px;
+}
+
 .card-body {
     padding: 15px;
 }
