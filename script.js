@@ -10,15 +10,17 @@ card.addEventListener('mousedown', (e) => {
     startX = e.clientX;
     startY = e.clientY;
     card.classList.add('elastic');
+    e.preventDefault();
 });
 
 document.addEventListener('mousemove', (e) => {
     if (!isDragging) return;
     
-    const deltaX = (e.clientX - startX) * 0.1;
-    const deltaY = (e.clientY - startY) * 0.1;
+    const deltaX = (e.clientX - startX) * 0.05;
+    const deltaY = (e.clientY - startY) * 0.05;
+    const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
     
-    card.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${1 + Math.abs(deltaX) * 0.0005})`;
+    card.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${1 + distance * 0.0003})`;
 });
 
 document.addEventListener('mouseup', () => {
@@ -34,16 +36,18 @@ card.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
     card.classList.add('elastic');
-});
+}, { passive: false });
 
 document.addEventListener('touchmove', (e) => {
     if (!isDragging) return;
+    e.preventDefault();
     
-    const deltaX = (e.touches[0].clientX - startX) * 0.15;
-    const deltaY = (e.touches[0].clientY - startY) * 0.15;
+    const deltaX = (e.touches[0].clientX - startX) * 0.08;
+    const deltaY = (e.touches[0].clientY - startY) * 0.08;
+    const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
     
-    card.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${1 + Math.abs(deltaX) * 0.0008})`;
-});
+    card.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${1 + distance * 0.0005})`;
+}, { passive: false });
 
 document.addEventListener('touchend', () => {
     if (!isDragging) return;
