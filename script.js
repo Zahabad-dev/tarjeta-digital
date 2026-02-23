@@ -1,14 +1,3 @@
-// Efecto de volteo de tarjeta
-const card = document.querySelector('.card');
-
-card.addEventListener('click', function(e) {
-    // No voltear si se hace clic en un botón o enlace
-    if (e.target.closest('button') || e.target.closest('a')) {
-        return;
-    }
-    card.classList.toggle('flipped');
-});
-
 // Función para guardar el contacto como vCard
 function saveContact() {
     const vCard = `BEGIN:VCARD
@@ -17,7 +6,7 @@ FN:L.C.E Missael López Lira
 N:López Lira;Missael;;;
 EMAIL:missaellopezlira75@gmail.com
 TEL;TYPE=CELL:+524421154412
-ADR;TYPE=HOME:;;C. Jose Maria Ochoa 423, Col Los Candiles;Corregidora;QRO;76190;México
+ADR;TYPE=HOME:;;Santiago de Querétaro;;;;
 TITLE:Licenciado en Comercio Exterior
 END:VCARD`;
 
@@ -40,7 +29,7 @@ END:VCARD`;
 function shareCard() {
     const shareData = {
         title: 'Tarjeta Digital - Missael López Lira',
-        text: 'L.C.E Missael López Lira\nLicenciado en Comercio Exterior\n\nEmail: missaellopezlira75@gmail.com\nTeléfono: 442-115-4412\nDirección: C. Jose Maria Ochoa 423, Col Los Candiles, 76190. Corregidora, QRO.',
+        text: 'L.C.E Missael López Lira\nLicenciado en Comercio Exterior\n\nEmail: missaellopezlira75@gmail.com\nTeléfono: 442-115-4412\nDirección: Santiago de Querétaro',
         url: window.location.href
     };
     
@@ -64,7 +53,7 @@ Licenciado en Comercio Exterior
 
 Email: missaellopezlira75@gmail.com
 Teléfono: 442-115-4412
-Dirección: C. Jose Maria Ochoa 423, Col Los Candiles, 76190. Corregidora, QRO.`;
+Dirección: Santiago de Querétaro`;
     
     navigator.clipboard.writeText(text)
         .then(() => showNotification('¡Información copiada al portapapeles!'))
